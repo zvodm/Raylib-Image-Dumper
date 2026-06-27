@@ -48,6 +48,7 @@ The generated headers can be included directly in a raylib project, allowing ima
 
 ```cpp
 #include "image.hpp"
+#include raylib.h
 
 int main(){
 	InitWindow(600, 400, "Dumped image tester");
