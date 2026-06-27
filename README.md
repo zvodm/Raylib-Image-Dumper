@@ -61,6 +61,8 @@ int main(){
 		DrawTexture(img, 0, 0, WHITE);
 		EndDrawing();
 	}
+
+	UnloadTexture(img);
 	
 	return 0;
 }
