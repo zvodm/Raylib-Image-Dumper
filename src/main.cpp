@@ -8,6 +8,7 @@ using namespace std;
 
 int main(int argc, char* argv[]){
     if (argc > 1){
+        SetTraceLogLevel(LOG_WARNING);
 		vector<string> files;
 
         for (int i = 1; i < argc; i++){
