@@ -15,14 +15,17 @@ int main(int argc, char* argv[]){
         }
 
         for (int i = 0; i < files.size(); i++){
-            cout << files[i].c_str() << "\n" << "Converting to header\n";
-            Image img = LoadImage(files[i].c_str()); cout << "Loaded Image " << files[i].c_str() << "\n";
+            cout << files[i].c_str() << "\n" << "rid: Converting image to header\n";
+            Image img = LoadImage(files[i].c_str()); cout << "rid: Loaded Image " << files[i].c_str() << "\n";
             size_t lastindex = files[i].find_last_of("."); 
             string name = files[i].substr(0, lastindex) + ".hpp";
-            ExportImageAsCode(img, name.c_str()); cout << "Exported Image as code " << name.c_str() << "\n";
-            UnloadImage(img); cout << "Freed memmory\n";
+            ExportImageAsCode(img, name.c_str()); cout << "rid: Exported Image as code " << name.c_str() << "\n";
+            UnloadImage(img); cout << "rid: Freed memmory from " << files[i].c_str() << "\n";
         }
     }
+	else{
+		cout << "rid: No input files\nUsage: rid [image file(s)]\n";
+	}
 
     return 0;
 }
