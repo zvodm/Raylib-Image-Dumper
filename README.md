@@ -49,7 +49,20 @@ The generated headers can be included directly in a raylib project, allowing ima
 ```cpp
 #include "image.hpp"
 
-// Use the generated image data with raylib.
+int main(){
+	InitWindow(600, 400, "Dumped image tester");
+	
+	Texture img = LoadTextureFromImage(Image{IMAGE_DATA, IMAGE_WIDTH, IMAGE_HEIGHT, 1, IMAGE_FORMAT});
+	
+	while (!WindowShouldClose()){
+		BeginDrawing();
+        ClearBackground(WHITE);
+		DrawTexture(img, 0, 0, WHITE);
+		EndDrawing();
+	}
+	
+	return 0;
+}
 ```
 
 ## License
